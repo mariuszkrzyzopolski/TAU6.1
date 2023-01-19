@@ -1,6 +1,6 @@
 import org.example.Note;
 import org.example.NotesServiceImpl;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.example.NotesServiceImpl.createWith;
@@ -13,7 +13,7 @@ public class TestNotesServiceImpl {
     MockedNotesStorage storage = new MockedNotesStorage();
     NotesServiceImpl service = createWith(storage);
 
-    @AfterEach
+    @BeforeEach
     public void clear() {
         storage.clear();
     }
