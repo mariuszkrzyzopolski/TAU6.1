@@ -1,6 +1,5 @@
 import org.example.Note;
 import org.example.NotesServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.example.NotesServiceImpl.createWith;
@@ -13,11 +12,28 @@ public class TestNotesServiceImpl {
     MockedNotesStorage storage = new MockedNotesStorage();
     NotesServiceImpl service = createWith(storage);
 
-    @BeforeEach
-    public void clear() {
+    @Test
+    public void testAddToStorage(){
         storage.clear();
+        service.add(noteOne);
+        assertTrue(storage.getAllNotesOf("first").contains(noteOne));
     }
 
+    @Test
+    public void testAddTwoToStorage(){
+        storage.clear();
+        service.add(noteOne);
+        service.add(secondNoteOne);
+        assertEquals(2, storage.getAllNotesOf("first").size());
+    }
+
+    @Test
+    public void testAddTwoDifferentToStorage(){
+        storage.clear();
+        service.add(noteOne);
+        service.add(noteTwo);
+        assertEquals(1, storage.getAllNotesOf("first").size());
+    }
 
     @Test
     public void testClear() {
@@ -27,27 +43,8 @@ public class TestNotesServiceImpl {
     }
 
     @Test
-    public void testAddToStorage(){
-        service.add(noteOne);
-        assertTrue(storage.getAllNotesOf("first").contains(noteOne));
-    }
-
-    @Test
-    public void testAddTwoToStorage(){
-        service.add(noteOne);
-        service.add(secondNoteOne);
-        assertEquals(2, storage.getAllNotesOf("first").size());
-    }
-
-    @Test
-    public void testAddTwoDifferentToStorage(){
-        service.add(noteOne);
-        service.add(noteTwo);
-        assertEquals(1, storage.getAllNotesOf("first").size());
-    }
-
-    @Test
     public void testCheckAverage(){
+        storage.clear();
         service.add(noteOne);
         service.add(secondNoteOne);
         assertEquals(2.0f, service.averageOf("first"));
