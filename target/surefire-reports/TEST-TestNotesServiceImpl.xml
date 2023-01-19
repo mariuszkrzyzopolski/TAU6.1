@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="TestNotesServiceImpl" time="0.041" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="TestNotesServiceImpl" time="0.036" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="strip"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -57,8 +57,8 @@
     <property name="java.vendor.version" value="Corretto-17.0.6.10.1"/>
   </properties>
   <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testAddToStorage" time="0.029"/>
-  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testAddTwoToStorage" time="0.005"/>
-  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testAddTwoDifferentToStorage" time="0.001"/>
-  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testClear" time="0.001"/>
+  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testAddTwoToStorage" time="0.002"/>
+  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testAddTwoDifferentToStorage" time="0"/>
+  <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testClear" time="0"/>
   <testcase classname="TestNotesServiceImpl" name="TestNotesServiceImpl.testCheckAverage" time="0.005"/>
 </testsuite>
